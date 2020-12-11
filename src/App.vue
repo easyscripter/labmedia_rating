@@ -1,19 +1,19 @@
 <template>
   <div id="app">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
           <h1 class="title">Рейтинг</h1>
         </div>
-        <div class="col-md-9">
-          <div class="col-md-12">
+        <div class="col-md-9 col-sm-12 col-xs-12">
+          <div class="col-md-12 ">
             <altero-field v-model="searchByName" field-name="Найти пользователя"></altero-field>
           </div>
           <div class="col-md-12">
             <easy-select :options="filterOptions" name="Город" @select="getOption" :selected="selectedOption"></easy-select>
           </div>
         </div>
-        <div class="col-md-3"></div>
-        <div class="col-md-9">
+        <div class="col-md-3 col-sm-0 col-xs-0"></div>
+        <div class="col-md-9 col-sm-12 col-xs-12">
           <easy-table :columns-name="columnsName" :data-rows="usersFound"/>
         </div>
         <div class="col-md-3">
