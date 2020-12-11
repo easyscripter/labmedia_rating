@@ -16,7 +16,15 @@
         <div class="col-md-9">
           <easy-table :columns-name="columnsName" :data-rows="usersFound"/>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <div class="card-container">
+              <easy-card card-title="№1, Gwenborough" :card-data="cardData"></easy-card>
+              <easy-card card-title="№3, Wisokyburgh" :card-data="cardData"></easy-card>
+              <easy-card card-title="№2, McKenziehaven" :card-data="cardData"></easy-card>
+              <easy-card card-title="№4, South Elvis" :card-data="cardData"></easy-card>
+          </div>
+        </div>
+        <div class="col-md-12 footer"></div>
       </div>
   </div>
 </template>
@@ -26,13 +34,15 @@ import axios from "axios";
 import EasyTable from "@/components/EasyTable";
 import AlteroField from "@/components/AlteroField";
 import EasySelect from "@/components/EasySelect";
+import EasyCard from "@/components/EasyCard";
 
 export default {
   name: 'App',
   components: {
     EasyTable,
     AlteroField,
-    EasySelect
+    EasySelect,
+    EasyCard
   },
   data() {
     return {
@@ -40,6 +50,10 @@ export default {
       users: [],
       searchByName: '',
       selectedOption: 'Город',
+      cardData: {
+        position: '1',
+        suite: 'Apt.556'
+      }
     }
   },
   computed: {
@@ -98,6 +112,20 @@ export default {
     font-size: 50px;
     text-align: left;
     color: #000000;
+  }
+  .card-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    position:-webkit-sticky;
+    position:sticky;
+    top: 0;
+  }
+  .footer {
+    width: 100%;
+    height: 1200px;
+    border: 1px solid #000000;
   }
 }
 </style>
