@@ -62,28 +62,6 @@ export default {
     font-weight: 700;
     cursor: pointer;
     outline: none;
-    &:after {
-      position: absolute;
-      content: '';
-      width: 8px;
-      height: 8px;
-      right: 15px;
-      top: 0;
-      border-top: 2px solid #000000;
-      border-right: 2px solid #000000;
-      transform: rotate(135deg);
-
-    }
-    &:focus + .easy-select:after {
-      position: absolute;
-      content: '';
-      width: 8px;
-      height: 8px;
-      right: 15px;
-      top: 0;
-      border-top: 2px solid #000000;
-      border-right: 2px solid #000000;
-    }
     &-name {
       width: 100%;
       margin: 0;
@@ -92,6 +70,18 @@ export default {
       text-align: left;
       border: none;
       border-bottom: 2px solid #8F9399;
+      &:after {
+        position: absolute;
+        content: '';
+        width: 8px;
+        height: 8px;
+        right: 15px;
+        top: 0;
+        border-top: 2px solid #000000;
+        border-right: 2px solid #000000;
+        transform: rotate(135deg);
+
+      }
     }
     &-options {
       position: absolute;
