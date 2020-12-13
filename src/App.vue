@@ -13,18 +13,21 @@
           </div>
         </div>
         <div class="col-md-3 col-sm-0 col-xs-0"></div>
-        <div class="col-md-9 col-sm-12 col-xs-12">
-          <easy-table :columns-name="columnsName" :data-rows="usersFound"/>
-        </div>
-        <div class="col-md-3">
-          <div class="card-container">
-              <easy-card card-title="№1, Gwenborough" :card-data="cardData"></easy-card>
-              <easy-card card-title="№3, Wisokyburgh" :card-data="cardData"></easy-card>
-              <easy-card card-title="№2, McKenziehaven" :card-data="cardData"></easy-card>
-              <easy-card card-title="№4, South Elvis" :card-data="cardData"></easy-card>
+        <div class="main-container col-md-12">
+          <div class="row">
+            <div class="col-md-9">
+              <easy-table :columns-name="columnsName" :data-rows="usersFound"/>
+            </div>
+            <div class="col-md-3">
+              <div class="card-container" ref="cardContainer">
+                <easy-card card-title="№1, Gwenborough" :card-data="cardData"></easy-card>
+                <easy-card card-title="№3, Wisokyburgh" :card-data="cardData"></easy-card>
+                <easy-card card-title="№2, McKenziehaven" :card-data="cardData"></easy-card>
+                <easy-card card-title="№4, South Elvis" :card-data="cardData"></easy-card>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-12 footer"></div>
       </div>
   </div>
 </template>
@@ -35,6 +38,7 @@ import EasyTable from "@/components/EasyTable";
 import AlteroField from "@/components/AlteroField";
 import EasySelect from "@/components/EasySelect";
 import EasyCard from "@/components/EasyCard";
+import * as Stickyfill from "stickyfilljs";
 
 export default {
   name: 'App',
@@ -77,6 +81,8 @@ export default {
   },
   mounted() {
     this.fetchUsers();
+    // window.addEventListener('scroll', this.stickingPosition);
+    Stickyfill.add(this.$refs.cardContainer);
   },
   methods: {
     async fetchUsers() {
@@ -97,6 +103,21 @@ export default {
     getUnique(arr) {
       return Array.from(new Set(arr));
     },
+    // stickingPosition() {
+    //   const offset = this.$refs.cardContainer.getBoundingClientRect();
+    //   if (window.pageYOffset > (offset.top + 150)) {
+    //     this.$refs.cardContainer.style.position = 'fixed';
+    //     this.$refs.cardContainer.style.top = 0;
+    //   } else {
+    //     this.$refs.cardContainer.style.position = 'relative';
+    //     this.$refs.cardContainer.style.top = '';
+    //   }
+    //
+    //   if (window.pageYOffset >= (offset.bottom - 300)) {
+    //     this.$refs.cardContainer.style.position = 'relative';
+    //     this.$refs.cardContainer.style.top = 0;
+    //   }
+    // }
   },
 }
 </script>
@@ -114,17 +135,19 @@ export default {
     color: #000000;
   }
   .card-container {
+    position: sticky;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-content: space-between;
-    position:-webkit-sticky;
-    position:sticky;
     top: 0;
+  }
+  .main-container {
+    margin-bottom: 500px;
   }
   .footer {
     width: 100%;
-    height: 1200px;
+    height: 100px;
     border: 1px solid #000000;
   }
 }

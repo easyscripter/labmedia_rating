@@ -1,35 +1,35 @@
+$assets: '~@/assets/';
+
+
 @font-face {
       font-family: 'Montserrat';
-      src: url('~@/assets/fonts/Montserrat-Bold.eot');
+      src: url($assets +'fonts/Montserrat-Bold.eot');
       src: local('Montserrat Bold'), local('Montserrat-Bold'),
-      url('~@/assets/fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
-      url('~@/assets/fonts/Montserrat-Bold.woff2') format('woff2'),
-      url('~@/assets/fonts/Montserrat-Bold.woff') format('woff'),
-      url('~@/assets/fonts/Montserrat-Bold.ttf') format('truetype');
+      url($assets + 'fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+      url($assets + 'fonts/Montserrat-Bold.woff') format('woff'),
+      url($assets + 'fonts/Montserrat-Bold.ttf') format('truetype');
       font-weight: bold;
       font-style: normal;
 }
 
 @font-face {
       font-family: 'Montserrat';
-      src: url('~@/assets/fonts/Montserrat-ExtraBold.eot');
+      src: url($assets + 'fonts/Montserrat-ExtraBold.eot');
       src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
-      url('~@/assets/fonts/Montserrat-ExtraBold.eot?#iefix') format('embedded-opentype'),
-      url('~@/assets/fonts/Montserrat-ExtraBold.woff2') format('woff2'),
-      url('~@/assets/fonts/Montserrat-ExtraBold.woff') format('woff'),
-      url('~@/assets/fonts/Montserrat-ExtraBold.ttf') format('truetype');
+      url($assets + 'fonts/Montserrat-ExtraBold.eot?#iefix') format('embedded-opentype'),
+      url($assets + 'fonts/Montserrat-ExtraBold.woff') format('woff'),
+      url($assets + 'fonts/Montserrat-ExtraBold.ttf') format('truetype');
       font-weight: 800;
       font-style: normal;
 }
 
 @font-face {
       font-family: 'Montserrat';
-      src: url('~@/assets/fonts/Montserrat-Black.eot');
+      src: url($assets + 'fonts/Montserrat-Black.eot');
       src: local('Montserrat Black'), local('Montserrat-Black'),
-      url('~@/assets/fonts/Montserrat-Black.eot?#iefix') format('embedded-opentype'),
-      url('~@/assets/fonts/Montserrat-Black.woff2') format('woff2'),
-      url('~@/assets/fonts/Montserrat-Black.woff') format('woff'),
-      url('~@/assets/fonts/Montserrat-Black.ttf') format('truetype');
+      url($assets + 'fonts/Montserrat-Black.eot?#iefix') format('embedded-opentype'),
+      url($assets + 'fonts/Montserrat-Black.woff') format('woff'),
+      url($assets + 'fonts/Montserrat-Black.ttf') format('truetype');
       font-weight: 900;
       font-style: normal;
 }
