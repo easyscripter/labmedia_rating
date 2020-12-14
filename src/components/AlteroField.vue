@@ -39,7 +39,8 @@ export default {
     display: inline-block;
     margin-top: 10px;
     margin-bottom: 28px;
-    font-family: $font;
+    font-family: $font; 
+    font-weight: normal;
   }
 
   label , input {
@@ -49,20 +50,18 @@ export default {
   label {
     position: absolute;
     top: 15px;
-    left: 10px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     text-align: left;
-    color: rgba(71, 67, 67, 0.9);
+    color: rgba(0,0,0, 1);
     transition: top 0.4s ease-in-out;
     pointer-events: none;
   }
 
   input {
     position: relative;
-    width: 600px;
+    width: 100%;
     margin-top: 9px;
-    padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     font-family: $font;

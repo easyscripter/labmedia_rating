@@ -1,6 +1,7 @@
-@import "./_fonts.scss";
-@import "variables/main.scss";
-@import "mixins/main.scss";
+@import "variables/main";
+@import "mixins/main";
 @import "grid";
-@import "./_variables.scss";
-@import "visibility"; // Visibility last for precedence
+@import "visibility";
+@import "normalize";
+@import "fonts";
+@import "variables"

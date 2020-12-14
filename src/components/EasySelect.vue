@@ -1,5 +1,5 @@
 <template>
-  <div class="easy-select" tabindex="2">
+  <div class="easy-select">
     <p class="easy-select-name" @click="isVisible = !isVisible">{{selected}}</p>
     <transition name="fade">
       <div v-if="isVisible" class="easy-select-options">
@@ -34,12 +34,6 @@ export default {
       isClear: false,
     }
   },
-  mounted() {
-    document.addEventListener("click", this.hideSelect, true)
-  },
-  beforeDestroy() {
-    document.removeEventListener("click", this.hideSelect)
-  },
   methods: {
     selectOption(option) {
       this.$emit("select", option);
@@ -47,7 +41,7 @@ export default {
     },
     hideSelect() {
       this.isVisible = false;
-    }
+    },
   }
 }
 </script>
@@ -55,21 +49,23 @@ export default {
 <style lang="scss" scoped>
   .easy-select {
     position: relative;
-    width: 600px;
+    width: 100%;
     max-width: 1200px;
     font-family: $font;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     outline: none;
+    color: gray;
     &-name {
+      position: relative;
       width: 100%;
       margin: 0;
-      padding-left: 10px;
       padding-bottom: 10px;
       text-align: left;
       border: none;
       border-bottom: 2px solid #8F9399;
+      z-index: 6;
       &:after {
         position: absolute;
         content: '';
@@ -86,7 +82,7 @@ export default {
     &-options {
       position: absolute;
       left: 0;
-      top: 25px;
+      top: 40px;
       width: 100%;
       text-align: left;
       z-index: 4;

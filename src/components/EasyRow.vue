@@ -26,15 +26,14 @@ export default {
       border-bottom: 1px solid rgba(129, 129, 129, 0.5);
       .easy-cell {
         text-align: left;
-        padding-right: 15px;
-        padding-left: 15px;
+        word-break: break-all;
         &:nth-child(1), &:nth-child(6) {
-          width: 10%;
+          width: 7%;
           padding-top: 20px;
           padding-bottom: 20px;
         }
         &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
-          width: 25%;
+          width: 23%;
           padding-top: 20px;
           padding-bottom: 20px;
         }

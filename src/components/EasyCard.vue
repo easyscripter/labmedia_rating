@@ -35,16 +35,21 @@ export default {
 
 <style lang="scss" scoped>
     .easy-card {
-      width: 164px;
-      height: 136px;
+      width: 100%;
+      height: 134px;
       margin-top: 1px;
-      padding: 10px 9px 15px 10px;
+      padding: 10px 18px 15px 18px;
       background-color: #C882FF;
       font-family: $font;
       font-size: 13px;
+      text-align: left;
       color: #ffffff;
       &-title {
+        margin-left: 8px;
         word-break: break-all;
+        font-weight: normal;
+        font-size: 13px;
+        color: #ffffff;
       }
       &-body {
         display: flex;
@@ -52,25 +57,30 @@ export default {
         align-items: center;
       }
       .position, .suite {
-        width: 50%;
         word-break: break-all;
         margin-top: 10px;
         margin-bottom: 10px;
       }
       .position p, .suite p {
-        margin: 2px;
+        margin: 3px;
       }
       .position p:nth-child(1), .suite p:nth-child(1) {
         font-size: 18px;
         font-weight: bold;
       }
+      .position p:nth-child(2), .suite p:nth-child(2) {
+        color: rgba(255, 255, 255, 0.65);
+      }
 
       button {
+        width: 100%;
         background-color: transparent;
         outline: none;
         border: none;
         color: #ffffff;
         cursor: pointer;
+        text-align: left;
+        margin-left: 3px;
       }
     }
 </style>

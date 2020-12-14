@@ -2,6 +2,30 @@
 // No gutters
 // No text alignment with justified container classes (center-xs, for example)
 
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media #{$breakpoint-lg-only} {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+        
+  @media #{$breakpoint-md-only} {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+        
+  @media #{$breakpoint-xs-only} {
+    max-width: 450px;
+    padding-right: 15px;
+    padding-left: 15px;
+ }
+        
+}
+
 .row {
   @include row();
 }
@@ -54,24 +78,97 @@
     align-self: stretch;
 }
 
-// Mixin to run inside of for loop - creates col/breakpoint classes * Not for developer use *
-@mixin col-factory($thisPrefix) {
-  .col-#{$thisPrefix} {
-    box-sizing: border-box;
-    flex-grow: 1;
-    flex-basis: 0;
-    max-width: 100%;
-    padding: $gutter;
-  }
+
+@mixin col-factory-all($thisPrefix) {
   @for $i from 1 through $grid-columns {
-    .col-#{$thisPrefix}-#{$i} {
+    .col-#{$i} {
       box-sizing: border-box;
       flex-basis: 100% / $grid-columns * $i;
       max-width: 100% / $grid-columns * $i;
-      padding: $gutter;
+      padding: $gutter-lg;
+      @media screen and (max-width: 767px) {
+        padding: $gutter-xs;
+      }
     }
-    .col-#{$thisPrefix}-offset-#{$i} {
+    .col-offset-#{$i} {
       margin-left: 100% / $grid-columns * $i;
+    }
+  }
+  .row.start {
+    justify-content: flex-start;
+  }
+  .row.center {
+    justify-content: center;
+  }
+  .row.end {
+    justify-content: flex-end;
+  }
+  .row.top {
+    align-items: flex-start;
+  }
+  .row.middle {
+    align-items: center;
+  }
+  .row.bottom {
+    align-items: flex-end;
+  }
+  .row.around {
+    justify-content: space-around;
+  }
+  .row.between {
+    justify-content: space-between;
+  }
+}
+
+@mixin col-factory-xs($thisPrefix-xs) {
+  @for $i from 1 through $grid-columns-xs {
+    .col-#{$thisPrefix-xs}-#{$i} {
+      box-sizing: border-box;
+      flex-basis: 100% / $grid-columns-xs * $i;
+      max-width: 100% / $grid-columns-xs * $i;
+      padding: $gutter-xs;
+    }
+    .col-#{$thisPrefix-xs}-offset-#{$i} {
+      margin-left: 100% / $grid-columns-xs * $i;
+    }
+  }
+}
+
+@mixin col-factory-md($thisPrefix-md) {
+  @for $i from 1 through $grid-columns-md {
+    .col-#{$thisPrefix-md}-#{$i} {
+      box-sizing: border-box;
+      flex-basis: 100% / $grid-columns-xs * $i;
+      max-width: 100% / $grid-columns-xs * $i;
+      padding: $gutter-md;
+    }
+    .col-#{$thisPrefix-md}-offset-#{$i} {
+      margin-left: 100% / $grid-columns-xs * $i;
+    }
+  }
+ 
+}
+    
+
+@mixin col-factory-lg($thisPrefix-lg) {
+  @for $i from 1 through $grid-columns-lg {
+    .col-#{$thisPrefix-lg}-#{$i} {
+      box-sizing: border-box;
+      flex-basis: 100% / $grid-columns-lg * $i;
+      max-width: 100% / $grid-columns-lg * $i;
+      padding: $gutter-lg;
+    }
+    .col-#{$thisPrefix-lg}-offset-#{$i} {
+      margin-left: 100% / $grid-columns-lg * $i;
+    }
+  }
+}
+
+// Mixin to run inside of for loop - creates col/breakpoint classes * Not for developer use *
+@mixin col-factory($thisPrefix) {
+  @for $i from 1 through $grid-columns {
+    .order-#{$thisPrefix}-#{$i} {
+      order: #{$i};
     }
   }
   .row.start-#{$thisPrefix} {
@@ -108,22 +205,24 @@
 
 @for $i from 1 through length($breakpoint-up-prefixes) {
   $thisPrefix: nth($breakpoint-up-prefixes, $i);
+  $thisPrefix-xs: "xs";
+  $thisPrefix-lg: "lg";
+  $thisPrefix-md: "md";
   @if $thisPrefix == "xs" {
-    @include col-factory($thisPrefix);
-  } @else if $thisPrefix == "sm" {
-    @media #{$breakpoint-sm-up} {
+    @include col-factory-all($thisPrefix);
+    @media #{$breakpoint-xs-only} {
+      @include col-factory-xs($thisPrefix-xs);
       @include col-factory($thisPrefix);
     }
-  } @else if $thisPrefix == "md" {
-    @media #{$breakpoint-md-up} {
+  } @if $thisPrefix == "md" {
+    @include col-factory-all($thisPrefix);
+    @media #{$breakpoint-xs-only} {
+      @include col-factory-xs($thisPrefix-md);
       @include col-factory($thisPrefix);
     }
   } @else if $thisPrefix == "lg" {
-    @media #{$breakpoint-lg-up} {
-      @include col-factory($thisPrefix);
-    }
-  } @else if $thisPrefix == "xl" {
-    @media #{$breakpoint-xl-up} {
+    @media #{$breakpoint-lg-only} {
+      @include col-factory-lg($thisPrefix-lg);
       @include col-factory($thisPrefix);
     }
   }
