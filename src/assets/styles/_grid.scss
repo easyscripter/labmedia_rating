@@ -78,6 +78,12 @@
     align-self: stretch;
 }
 
+.firstMd {
+  @media #{$breakpoint-xs-only} {
+    order: -1;
+  }
+}
+
 
 @mixin col-factory-all($thisPrefix) {
   @for $i from 1 through $grid-columns {
@@ -86,8 +92,11 @@
       flex-basis: 100% / $grid-columns * $i;
       max-width: 100% / $grid-columns * $i;
       padding: $gutter-lg;
-      @media screen and (max-width: 767px) {
+      @media #{$breakpoint-xs-only} {
         padding: $gutter-xs;
+      }
+      @media #{$breakpoint-md-only} {
+        padding: $gutter-md;
       }
     }
     .col-offset-#{$i} {
@@ -138,12 +147,12 @@
   @for $i from 1 through $grid-columns-md {
     .col-#{$thisPrefix-md}-#{$i} {
       box-sizing: border-box;
-      flex-basis: 100% / $grid-columns-xs * $i;
-      max-width: 100% / $grid-columns-xs * $i;
+      flex-basis: 100% / $grid-columns-md * $i;
+      max-width: 100% / $grid-columns-md * $i;
       padding: $gutter-md;
     }
     .col-#{$thisPrefix-md}-offset-#{$i} {
-      margin-left: 100% / $grid-columns-xs * $i;
+      margin-left: 100% / $grid-columns-md * $i;
     }
   }
  
@@ -214,17 +223,17 @@
       @include col-factory-xs($thisPrefix-xs);
       @include col-factory($thisPrefix);
     }
-  } @if $thisPrefix == "md" {
-    @include col-factory-all($thisPrefix);
-    @media #{$breakpoint-xs-only} {
-      @include col-factory-xs($thisPrefix-md);
-      @include col-factory($thisPrefix);
-    }
+  } @else if $thisPrefix == "md" {
+      @include col-factory-all($thisPrefix);
+      @media #{$breakpoint-md-only} {
+        @include col-factory-md($thisPrefix-md);
+        @include col-factory($thisPrefix);
+      }
   } @else if $thisPrefix == "lg" {
-    @media #{$breakpoint-lg-only} {
-      @include col-factory-lg($thisPrefix-lg);
-      @include col-factory($thisPrefix);
-    }
+      @media #{$breakpoint-lg-only} {
+        @include col-factory-lg($thisPrefix-lg);
+        @include col-factory($thisPrefix);
+      }
   }
 }
 

@@ -13,7 +13,7 @@
   // // Overrides flexbox's default behavior of making all children equal height
   // align-items: flex-start; // If this was not in place it would require two classes to make a row full of unequal height columns aligned top, middle, bottom
   @if type-of($content-well-max-width) == number and $content-well-max-width != 0 and $full-width == "false" {
-    max-width: $content-well-max-width
+    max-width: $content-well-max-width;
   }
   @media #{$breakpoint-lg-only} {
     margin-left: -10px;
@@ -55,15 +55,15 @@
       @warn "Column number must be greater than 0 and less than or equal to total number of columns in the grid (#{$grid-columns})";
     } @else {
       box-sizing: border-box;
-			flex-basis: 100% / $grid-columns * $col-number;
-			@media #{$breakpoint-lg-only} {
-        padding: $gutter-lg
+      flex-basis: 100% / $grid-columns * $col-number;
+      @media #{$breakpoint-lg-only} {
+        padding: $gutter-lg;
       }
-			@media #{$breakpoint-md-only} {
-        padding: $gutter-md
+      @media #{$breakpoint-md-only} {
+        padding: $gutter-md;
       }
-			@media #{$breakpoint-xs-only} {
-        padding: $gutter-xs
+      @media #{$breakpoint-xs-only} {
+        padding: $gutter-xs;
       }
 				
     }
@@ -71,16 +71,16 @@
   // "auto" mode fills the horizontal space with evenly sized containers
   } @else if $col-number == "auto" {
     box-sizing: border-box;
-		flex-grow: 1;
-		flex-basis: 0;
-		@media #{$breakpoint-lg-only} {
-      padding: $gutter-lg
+    flex-grow: 1;
+    flex-basis: 0;
+    @media #{$breakpoint-lg-only} {
+      padding: $gutter-lg;
     }
-		@media #{$breakpoint-md-only} {
-      padding: $gutter-md
+    @media #{$breakpoint-md-only} {
+      padding: $gutter-md;
     }
-		@media #{$breakpoint-xs-only} {
-      padding: $gutter-xs
+    @media #{$breakpoint-xs-only} {
+      padding: $gutter-xs;
     }
   } @else {
     @warn "Column number argument must either be the string 'auto' or a number greater than 0 and less than or equal to total number of columns in the grid (#{$grid-columns})";
@@ -244,11 +244,11 @@
     justify-content: space-around;
   } @else if $breakpoint == "lg" {
     @media #{$breakpoint-lg-only} {
-      align-items: space-around;
+      justify-content: space-around;
     }
   } @else if $breakpoint == "md" {
     @media #{$breakpoint-md-only} {
-      align-items: space-around;
+      justify-content: space-around;
     }
   } @else {
     @warn "top mixin arg must be one of the existing breakpoints (#{$breakpoint-up-prefixes})";
@@ -260,11 +260,11 @@
     justify-content: space-between;
   } @else if $breakpoint == "lg" {
     @media #{$breakpoint-lg-only} {
-      align-items: space-between;
+      justify-content: space-between;
     }
   } @else if $breakpoint == "md" {
     @media #{$breakpoint-md-only} {
-      align-items: space-between;
+      justify-content: space-between;
     }
   } @else {
     @warn "top mixin arg must be one of the existing breakpoints (#{$breakpoint-up-prefixes})";
