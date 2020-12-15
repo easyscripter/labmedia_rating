@@ -2,56 +2,50 @@
   <div id="app">
     <div class="container">
       <div class="row">
-        <div class="title-container col-lg-12 col-md-12">
-          <h1 class="title-container_title">Рейтинг</h1>
-        </div>
-        <div class="form-container container col-lg-12 col-md-12 col-xs-12">
+        <div class="title-container col-lg-12 col-xs-12">
           <div class="row">
-            <div class="form-container_group col-lg-9 col-md-9 col-xs-12">
-              <altero-field
-                v-model="searchByName"
-                field-name="Найти пользователя"
-              ></altero-field>
-            </div>
-            <div class="form-container_group col-lg-12 col-md-12 col-xs-12">
-                <div class="row">
-                  <easy-select class="col-lg-3"
-                      :options="filterOptions"
-                      name="Город"
-                      @select="getOption"
-                      :selected="selectedOption"
-                  ></easy-select>
-                </div>
-            </div>
+            <h1 class="title-container_title col-lg-12 col-xs-12 col-md-12">Рейтинг</h1>
           </div>
         </div>
-        <div class="content-container container col-lg-12 col-md-12 col-xs-12">
-          <div class="row">
-            <div class="content-container_table-container col-lg-9 col-md-9 col-xs-12">
-              <easy-table :columns-name="columnsName" :data-rows="usersFound" />
-            </div>
-            <div
-              ref="cardContainer"
-              class="content-container_card-container firstMd co-lg-3 col-md-3 col-xs-12"
-            >
-              <easy-card
-                card-title="№1, Gwenborough"
-                :card-data="cardData"
-              ></easy-card>
-              <easy-card
-                card-title="№2, McKenziehaven"
-                :card-data="cardData"
-              ></easy-card>
-              <easy-card
-                card-title="№3, Wisokyburgh"
-                :card-data="cardData"
-              ></easy-card>
-              <easy-card
-                card-title="№4, South Elvis"
-                :card-data="cardData"
-              ></easy-card>
-            </div>
-          </div>
+        <div class="form-container-group col-md-8  col-lg-8 col-xs-12">
+            <altero-field
+              v-model="searchByName"
+              field-name="Найти пользователя"
+            ></altero-field>
+        </div>
+        <div class="form-container-group col-md-5 col-lg-5 col-xs-12">
+            <easy-select
+              :options="filterOptions"
+              name="Город"
+              @select="getOption"
+              :selected="selectedOption"
+            ></easy-select>
+        </div>
+        <easy-table
+          class="content-container_table-container col-lg-8 col-md-8 col-xs-12"
+          :columns-name="columnsName"
+          :data-rows="usersFound"
+        />
+        <div
+          ref="cardContainer"
+          class="content-container_card-container firstMd co-lg-4 col-md-4 col-xs-12"
+        >
+          <easy-card
+            card-title="№1, Gwenborough"
+            :card-data="cardData"
+          ></easy-card>
+          <easy-card
+            card-title="№2, McKenziehaven"
+            :card-data="cardData"
+          ></easy-card>
+          <easy-card
+            card-title="№3, Wisokyburgh"
+            :card-data="cardData"
+          ></easy-card>
+          <easy-card
+            card-title="№4, South Elvis"
+            :card-data="cardData"
+          ></easy-card>
         </div>
       </div>
     </div>
@@ -164,7 +158,6 @@ export default {
     align-content: space-between;
     top: 0;
   }
-
 }
 @media screen and (max-width: 767px) {
   .content-container_card-container {

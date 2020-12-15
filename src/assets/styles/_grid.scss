@@ -9,6 +9,7 @@
   margin-right: auto;
   margin-left: auto;
   @media #{$breakpoint-lg-only} {
+    max-width: 1152px;
     padding-right: 25px;
     padding-left: 25px;
   }

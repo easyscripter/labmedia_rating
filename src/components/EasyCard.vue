@@ -55,8 +55,6 @@ export default {
         width: 100%;
         display: flex;
         justify-content: space-between;
-      }
-      .position, .suite {
         margin-top: 10px;
         margin-bottom: 10px;
       }
@@ -83,5 +81,38 @@ export default {
         border-bottom: 1px dashed #ffffff;
         white-space: nowrap;
       }
+    }
+    @media screen and (max-width: 767px) {
+      .easy-card {
+        padding-top: 0;
+        padding-bottom: 13px;
+        position: relative;
+        &-title {
+          position: absolute;
+          bottom: 57px;
+        }
+        &-body {
+          margin-top: 0;
+          flex-direction: row-reverse;
+          .position {
+            position: relative;
+            top: 22px;
+            p:nth-child(1) {
+              font-size: 22px;
+              text-align: right;
+            }
+          }
+          .suite {
+              display: none;
+          }
+        }
+        &-footer {
+          button {
+            position: relative;
+            bottom: 10px;
+          }
+        }
+      }
+      
     }
 </style>

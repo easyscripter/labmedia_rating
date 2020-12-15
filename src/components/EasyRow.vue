@@ -28,17 +28,17 @@ export default {
         text-align: left;
         align-self: center;
         &:nth-child(1) {
-          width: 28px;
+          width: 30px;
           padding-top: 20px;
           padding-bottom: 20px;
         }
         &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
-          width: 340px;
+          width: 350px;
           padding-top: 20px;
           padding-bottom: 20px;
         }
         &:nth-child(6) {
-          width: 70px;
+          width: 63px;
           text-align: right;
         }
         &:nth-child(1), &:nth-child(4) {
@@ -58,20 +58,20 @@ export default {
       }
       .easy-cell {
         &:nth-child(1) {
-          width: 20px !important;
-          padding-top: 20px;
-          padding-bottom: 20px;
+          width: 18px !important;
+          padding-bottom: 0;
+          margin-bottom: -35px;
           align-self: flex-start;
         }
         &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
           width: 230px !important;
-          padding-top: 8px !important;
+          padding-top: 0 !important;
           padding-bottom: 8px !important;
           align-self: center;
         }
         &:nth-child(6) {
           width: 90px !important;
-          margin-top: -20px;
+          margin-top: -23px;
           align-self: flex-end;
           text-align: right;
         }
