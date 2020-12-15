@@ -169,7 +169,6 @@ export default {
         align-items: flex-start;
         &-first {
           width: 2%;
-          align-self: start;
           padding-top: 20px;
           padding-bottom: 20px;
         }
@@ -190,15 +189,16 @@ export default {
         .easy-static-cell:nth-child(3),
         .easy-static-cell:nth-child(4),
         .easy-static-cell:nth-child(5) {
-          width: 230px;
-          padding-top: 0 !important;
-          padding-bottom: 8px !important;
+          width: 350x;
+          padding-top: 20px;
+          padding-bottom: 20px;
         }
 
         .easy-static-cell:nth-child(6) {
-          width: 50px !important;
-          margin-top: -23px;
-          align-self: flex-end;
+          text-align: right;
+          width: 68px;
+          padding-top: 20px;
+          padding-bottom: 20px;
           text-align: right;
         }
         .easy-static-cell:nth-child(4) {
@@ -241,16 +241,14 @@ export default {
       .easy-static-cell:nth-child(4),
       .easy-static-cell:nth-child(5) {
         width: 320px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 0 !important;
+        padding-bottom: 8px !important;
       }
 
       .easy-static-cell:nth-child(6) {
-        width: 70px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        text-align: right;
-        word-break: break-all;
+        width: 50px !important;
+        align-self: flex-end;
+        
       }
     }
   }
