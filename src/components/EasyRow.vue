@@ -26,18 +26,19 @@ export default {
       border-bottom: 1px solid rgba(129, 129, 129, 0.5);
       .easy-cell {
         text-align: left;
-        word-break: break-all;
-        &:nth-child(1), &:nth-child(6) {
-          width: 7%;
+        align-self: center;
+        &:nth-child(1) {
+          width: 28px;
           padding-top: 20px;
           padding-bottom: 20px;
         }
         &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
-          width: 23%;
+          width: 340px;
           padding-top: 20px;
           padding-bottom: 20px;
         }
         &:nth-child(6) {
+          width: 70px;
           text-align: right;
         }
         &:nth-child(1), &:nth-child(4) {
@@ -46,6 +47,33 @@ export default {
         &:nth-child(5) {
           font-weight: bold;
           text-transform: uppercase;
+        }
+      }
+    }
+    @media screen and (max-width: 767px) {
+      .easy-row {
+        flex-direction: column;
+        align-items: stretch;
+        padding-bottom: 18px;
+      }
+      .easy-cell {
+        &:nth-child(1) {
+          width: 20px !important;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          align-self: flex-start;
+        }
+        &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+          width: 230px !important;
+          padding-top: 8px !important;
+          padding-bottom: 8px !important;
+          align-self: center;
+        }
+        &:nth-child(6) {
+          width: 90px !important;
+          margin-top: -20px;
+          align-self: flex-end;
+          text-align: right;
         }
       }
     }

@@ -5,32 +5,34 @@
         <div class="title-container col-lg-12 col-md-12">
           <h1 class="title-container_title">Рейтинг</h1>
         </div>
-        <div class="form-container container col-lg-12 col-md-12">
+        <div class="form-container container col-lg-12 col-md-12 col-xs-12">
           <div class="row">
-            <div class="form-container_group col-lg-9 col-md-12">
+            <div class="form-container_group col-lg-9 col-md-9 col-xs-12">
               <altero-field
                 v-model="searchByName"
                 field-name="Найти пользователя"
               ></altero-field>
             </div>
-            <div class="form-container_group col-lg-4 col-md-4">
-                <easy-select
-                  :options="filterOptions"
-                  name="Город"
-                  @select="getOption"
-                  :selected="selectedOption"
-                ></easy-select>
+            <div class="form-container_group col-lg-12 col-md-12 col-xs-12">
+                <div class="row">
+                  <easy-select class="col-lg-3"
+                      :options="filterOptions"
+                      name="Город"
+                      @select="getOption"
+                      :selected="selectedOption"
+                  ></easy-select>
+                </div>
             </div>
           </div>
         </div>
-        <div class="content-container container col-lg-12">
-          <div class="row between">
-            <div class="content-container_table-container col-lg-10 col-md-10">
+        <div class="content-container container col-lg-12 col-md-12 col-xs-12">
+          <div class="row">
+            <div class="content-container_table-container col-lg-9 col-md-9 col-xs-12">
               <easy-table :columns-name="columnsName" :data-rows="usersFound" />
             </div>
             <div
               ref="cardContainer"
-              class="content-container_card-container co-lg-2 col-md-2"
+              class="content-container_card-container firstMd co-lg-3 col-md-3 col-xs-12"
             >
               <easy-card
                 card-title="№1, Gwenborough"
@@ -152,21 +154,21 @@ export default {
       color: #000000;
     }
   }
-  .card-container {
+  .form-container {
+    margin-bottom: 50px;
+  }
+  .content-container_card-container {
     position: sticky;
-    max-width: 156px;
     display: flex;
     flex-direction: column;
     align-content: space-between;
     top: 0;
   }
-  .main-container {
-    margin-bottom: 500px;
-  }
-  .footer {
-    width: 100%;
-    height: 100px;
-    border: 1px solid #000000;
+
+}
+@media screen and (max-width: 767px) {
+  .content-container_card-container {
+    position: relative !important;
   }
 }
 </style>

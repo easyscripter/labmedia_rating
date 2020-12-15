@@ -36,37 +36,37 @@ export default {
 <style lang="scss" scoped>
     .easy-card {
       width: 100%;
-      height: 134px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       margin-top: 1px;
-      padding: 10px 18px 15px 18px;
+      padding: 18px 16px;
       background-color: #C882FF;
       font-family: $font;
       font-size: 13px;
       text-align: left;
       color: #ffffff;
       &-title {
-        margin-left: 8px;
-        word-break: break-all;
         font-weight: normal;
         font-size: 13px;
         color: #ffffff;
       }
       &-body {
+        width: 100%;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-between;
       }
       .position, .suite {
-        word-break: break-all;
         margin-top: 10px;
         margin-bottom: 10px;
       }
       .position p, .suite p {
-        margin: 3px;
+        margin: 4px;
+        white-space: nowrap;
       }
       .position p:nth-child(1), .suite p:nth-child(1) {
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 600;
       }
       .position p:nth-child(2), .suite p:nth-child(2) {
         color: rgba(255, 255, 255, 0.65);
@@ -80,7 +80,8 @@ export default {
         color: #ffffff;
         cursor: pointer;
         text-align: left;
-        margin-left: 3px;
+        border-bottom: 1px dashed #ffffff;
+        white-space: nowrap;
       }
     }
 </style>

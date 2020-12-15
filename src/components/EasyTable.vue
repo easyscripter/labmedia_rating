@@ -40,7 +40,7 @@ export default {
 <style lang="scss" scoped>
     .easy-table {
       width: 100%;
-      max-width: 1440px;
+      margin-top: 18px;
       font-family: $font;
       font-weight: 500;
       font-size: 0.8em;
@@ -50,15 +50,27 @@ export default {
         &-row {
           text-align: left;
           color: rgba(129, 129, 129, 0.8);
-          word-break: break-all;
-          &:nth-child(1), &:nth-child(6) {
-            width: 7%;
+          &:nth-child(1) {
+            width: 28px;
             padding-top: 20px;
           }
           &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
-            width: 23%;
+            width: 340px;
             padding-top: 20px;
+            padding-bottom: 20px;
           }
+          &:nth-child(6) {
+            width: 70px;
+            padding-top: 20px;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 767px) {
+      .easy-table {
+        &-header {
+          display: none;
         }
       }
     }
