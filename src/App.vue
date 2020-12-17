@@ -3,9 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="title-container col-lg-12 col-xs-12">
-          <div class="row">
-            <h1 class="title-container_title col-lg-12 col-xs-12 col-md-12">Рейтинг</h1>
-          </div>
+            <h1 class="title-container_title">Рейтинг</h1>
         </div>
         <div class="form-container-group col-md-8  col-lg-8 col-xs-12">
             <altero-field

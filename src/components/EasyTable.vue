@@ -181,7 +181,7 @@ export default {
         width: inherit;
         border-bottom: 1px solid rgba(129, 129, 129, 0.5);
         .easy-static-cell:nth-child(1) {
-          width: 10px;
+          width: 20px;
           padding-top: 20px;
           padding-bottom: 20px;
         }
@@ -189,17 +189,18 @@ export default {
         .easy-static-cell:nth-child(3),
         .easy-static-cell:nth-child(4),
         .easy-static-cell:nth-child(5) {
-          width: 350x;
+          width: 338px;
           padding-top: 20px;
           padding-bottom: 20px;
         }
 
         .easy-static-cell:nth-child(6) {
           text-align: right;
-          width: 68px;
+          width: 80px;
           padding-top: 20px;
           padding-bottom: 20px;
           text-align: right;
+          word-break: break-all;
         }
         .easy-static-cell:nth-child(4) {
           color: rgba(129, 129, 129, 0.8);
@@ -217,20 +218,19 @@ export default {
     &-header {
         display: none !important;
     }
+    .easy-static-cell-first {
+      padding-bottom: 0;
+      margin-bottom: -35px;
+      align-self: flex-start;
+    }
     .easy-static-children-row {
       flex-direction: column;
       align-items: stretch;
-      
+
       .easy-static-cell {
         width: 99%;
         display: flex;
         flex-direction: column;
-
-        &-first {
-          padding-bottom: 0;
-          margin-bottom: -35px;
-          align-self: flex-start;
-        }
       }
       .easy-static-cell:nth-child(1) {
         width: 18px !important;
@@ -240,7 +240,7 @@ export default {
       .easy-static-cell:nth-child(3),
       .easy-static-cell:nth-child(4),
       .easy-static-cell:nth-child(5) {
-        width: 320px;
+        width: 230px !important;
         padding-top: 0 !important;
         padding-bottom: 8px !important;
       }
@@ -248,7 +248,7 @@ export default {
       .easy-static-cell:nth-child(6) {
         width: 50px !important;
         align-self: flex-end;
-        
+        margin-top: -45px;
       }
     }
   }
